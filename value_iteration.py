@@ -103,9 +103,9 @@ def find_optimal_grid(grid, discount, R, threshold, goal_states, action_probabil
 						right_value = old_grid[i][j-1]
 					
 					best = max((action_probability*up_value+perpendicular_probability*left_value+perpendicular_probability*right_value), 
-										(action_probability*right_value+perpendicular_probability*up_value+perpendicular_probability*down_value), 
-										(action_probability*down_value+perpendicular_probability*right_value+perpendicular_probability*left_value),
-										(action_probability*left_value+perpendicular_probability*up_value+perpendicular_probability*down_value))
+								(action_probability*right_value+perpendicular_probability*up_value+perpendicular_probability*down_value), 
+								(action_probability*down_value+perpendicular_probability*right_value+perpendicular_probability*left_value),
+								(action_probability*left_value+perpendicular_probability*up_value+perpendicular_probability*down_value))
 
 					grid[i][j] = discount * best + R
 		if print_intermediary:
